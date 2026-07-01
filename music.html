@@ -36,28 +36,11 @@
     <section class="hero">
       <div class="hero-bg"></div>
       <div class="smoke-overlay">
-        <svg viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <filter id="smokeFilter" x="-50%" y="-50%" width="200%" height="200%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="1" result="noise">
-                <animate attributeName="seed" values="1;5;10;15;20;1" dur="20s" repeatCount="indefinite" />
-              </feTurbulence>
-              <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.15 0" in="noise" result="colored" />
-              <feGaussianBlur stdDeviation="40" in="colored" result="blur" />
-              <feBlend in="blur" in2="SourceGraphic" mode="screen" />
-            </filter>
-            <filter id="smokeFilter2" x="-50%" y="-50%" width="200%" height="200%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="42" result="noise">
-                <animate attributeName="seed" values="42;50;60;70;80;42" dur="25s" repeatCount="indefinite" />
-              </feTurbulence>
-              <feColorMatrix type="matrix" values="0.8 0 0 0 0  0 0.9 0 0 0  0 0 1 0 0  0 0 0 0.1 0" in="noise" result="colored" />
-              <feGaussianBlur stdDeviation="60" in="colored" result="blur" />
-              <feBlend in="blur" in2="SourceGraphic" mode="screen" />
-            </filter>
-          </defs>
-          <rect width="1000" height="800" filter="url(#smokeFilter)" fill="transparent" />
-          <rect width="1000" height="800" filter="url(#smokeFilter2)" fill="transparent" />
-        </svg>
+        <div class="smoke-cloud smoke-cloud-1"></div>
+        <div class="smoke-cloud smoke-cloud-2"></div>
+        <div class="smoke-cloud smoke-cloud-3"></div>
+        <div class="smoke-cloud smoke-cloud-4"></div>
+        <div class="smoke-cloud smoke-cloud-5"></div>
       </div>
       <div class="hero-content">
         <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--neon-dim); margin-bottom: 16px;">
