@@ -19,7 +19,7 @@
         <a href="index.html" class="logo">HEX<span>.</span></a>
         <ul class="nav-links" id="navLinks">
           <li><a href="music.html" class="active">Müzik</a></li>
-          <li><a href="media.html">Medya</a></li>
+          <li><a href="#" onclick="return false;" style="opacity:0.3; cursor:not-allowed;">Medya</a></li>
           <li><a href="#artists">Sanatçılar</a></li>
           <li><a href="#releases">Yayınlar</a></li>
           <li><a href="#demo">Demo Gönder</a></li>
@@ -35,18 +35,42 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-bg"></div>
+      <div class="smoke-overlay">
+        <svg viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <filter id="smokeFilter" x="-50%" y="-50%" width="200%" height="200%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="1" result="noise">
+                <animate attributeName="seed" values="1;5;10;15;20;1" dur="20s" repeatCount="indefinite" />
+              </feTurbulence>
+              <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.15 0" in="noise" result="colored" />
+              <feGaussianBlur stdDeviation="40" in="colored" result="blur" />
+              <feBlend in="blur" in2="SourceGraphic" mode="screen" />
+            </filter>
+            <filter id="smokeFilter2" x="-50%" y="-50%" width="200%" height="200%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="42" result="noise">
+                <animate attributeName="seed" values="42;50;60;70;80;42" dur="25s" repeatCount="indefinite" />
+              </feTurbulence>
+              <feColorMatrix type="matrix" values="0.8 0 0 0 0  0 0.9 0 0 0  0 0 1 0 0  0 0 0 0.1 0" in="noise" result="colored" />
+              <feGaussianBlur stdDeviation="60" in="colored" result="blur" />
+              <feBlend in="blur" in2="SourceGraphic" mode="screen" />
+            </filter>
+          </defs>
+          <rect width="1000" height="800" filter="url(#smokeFilter)" fill="transparent" />
+          <rect width="1000" height="800" filter="url(#smokeFilter2)" fill="transparent" />
+        </svg>
+      </div>
       <div class="hero-content">
-        <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.4); margin-bottom: 16px;">
+        <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--neon-dim); margin-bottom: 16px;">
           Take Your Music Career to the Next Level With Us
         </p>
-        <h1><span>HEXTREME</span> MUSIC</h1>
+        <h1><span class="neon-glow-text">HEXTREME</span> MUSIC</h1>
         <p>
           Profesyonel ekibimizle, yaratıcı sınırları zorlayarak benzersiz
           projelere imza atıyoruz.
         </p>
         <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <a href="#artists" class="btn btn-primary">Sanatçılar</a>
-          <a href="#demo" class="btn btn-outline">Demo Gönder</a>
+          <a href="#artists" class="btn btn-neon">Sanatçılar</a>
+          <a href="#demo" class="btn btn-neon-outline">Demo Gönder</a>
         </div>
       </div>
     </section>
@@ -56,7 +80,7 @@
       <div class="container">
         <div class="about-text">
           <p class="section-label">Hakkımızda</p>
-          <h2 class="section-title">HEXTREME MUSIC</h2>
+          <h2 class="section-title neon-title">HEXTREME MUSIC</h2>
           <p>
             HEX Music, müziğin gücünü keşfetmek ve hayallerini gerçeğe
             dönüştürmek için burada. Profesyonel ekibimizle, yaratıcı sınırları
@@ -73,7 +97,7 @@
       <div class="container">
         <div class="text-center">
           <p class="section-label">Kadromuz</p>
-          <h2 class="section-title">HEX ARTISTS</h2>
+          <h2 class="section-title neon-title">HEX ARTISTS</h2>
           <p class="section-subtitle">
             Yetenekli sanatçı kadromuzla tanışın.
           </p>
@@ -138,7 +162,7 @@
       <div class="container">
         <div class="text-center">
           <p class="section-label">Son Çıkanlar</p>
-          <h2 class="section-title">Latest Releases</h2>
+          <h2 class="section-title neon-title">Latest Releases</h2>
           <p class="section-subtitle">
             HEX Music etiketiyle yayınlanan son parçalar.
           </p>
@@ -188,39 +212,35 @@
     </section>
 
     <!-- LIVE ACTIONS / VIDEOS -->
-    <section class="section" id="live">
+    <section class="section video-section" id="live">
       <div class="container">
-        <div class="text-center">
+        <div class="text-center" style="padding: 0 24px 32px;">
           <p class="section-label">Canlı Performanslar</p>
-          <h2 class="section-title">Live Actions</h2>
+          <h2 class="section-title neon-title">Live Actions</h2>
           <p class="section-subtitle">
             Pop-Up etkinlikler ile tarzınızı yansıtın.
           </p>
         </div>
 
-        <div class="video-grid">
-          <div class="video-card">
-            <div class="video-thumbnail">
-              <img
-                src="https://img.youtube.com/vi/mUYh9-LVjVM/maxresdefault.jpg"
-                alt="Pop-Up Etkinlik"
-                onerror="this.src='https://via.placeholder.com/640x360/1a1a2e/ffffff?text=Video'"
-              />
-              <a
-                href="https://www.youtube.com/watch?v=mUYh9-LVjVM"
-                target="_blank"
-                class="play-btn"
-              >
-                <svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </a>
+        <div class="video-full" id="videoPlayer">
+          <div class="video-overlay" id="videoOverlay">
+            <img
+              src="https://img.youtube.com/vi/mUYh9-LVjVM/maxresdefault.jpg"
+              alt="Pop-Up Etkinlik"
+              onerror="this.style.display='none'"
+            />
+            <div class="play-btn-large">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
             </div>
-            <div class="video-info">
-              <h3>Pop-Up etkinlikler ile tarzınızı yansıtın.</h3>
-              <p>HEXTREME</p>
-            </div>
+            <h3>Pop-Up etkinlikler ile tarzınızı yansıtın.</h3>
           </div>
+          <iframe
+            id="youtubeIframe"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </section>
@@ -230,7 +250,7 @@
       <div class="container">
         <div class="text-center">
           <p class="section-label">Bizimle Çalışın</p>
-          <h2 class="section-title">SEND YOUR DEMO</h2>
+          <h2 class="section-title neon-title">SEND YOUR DEMO</h2>
           <p class="section-subtitle">
             Demonuzu gönderin, ekibimiz en kısa sürede size dönüş yapacaktır.
           </p>
@@ -312,7 +332,7 @@
               />
             </div>
 
-            <button type="submit" class="btn-submit">Apply</button>
+            <button type="submit" class="btn-submit" style="background: var(--neon); color: #0a0a0a;">Apply</button>
           </form>
         </div>
       </div>
@@ -325,7 +345,7 @@
         <div class="footer-links">
           <a href="index.html">Home</a>
           <a href="music.html">Müzik</a>
-          <a href="media.html">Medya</a>
+          <a href="#" onclick="return false;" style="opacity:0.3; cursor:not-allowed;">Medya</a>
         </div>
         <div class="social-links">
           <a href="#" target="_blank" aria-label="Instagram">
@@ -360,8 +380,9 @@
       </div>
     </footer>
 
-    <!-- MOBILE NAV TOGGLE -->
+    <!-- MOBILE NAV TOGGLE & VIDEO -->
     <script>
+      // Nav toggle
       const toggle = document.getElementById("navToggle");
       const links = document.getElementById("navLinks");
 
@@ -374,6 +395,17 @@
           links.classList.remove('open');
         });
       });
+
+      // Video overlay click - play & hide overlay
+      const overlay = document.getElementById("videoOverlay");
+      const iframe = document.getElementById("youtubeIframe");
+
+      if (overlay) {
+        overlay.addEventListener("click", () => {
+          overlay.classList.add("hidden");
+          iframe.src = "https://www.youtube.com/embed/mUYh9-LVjVM?autoplay=1&rel=0";
+        });
+      }
     </script>
   </body>
 </html>
